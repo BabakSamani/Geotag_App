@@ -1,0 +1,606 @@
+	#map-canvas {
+		width: 100%; 
+		height: 670px;
+		position: relative;
+		margin-bottom: 0px;
+		bottom: 0;
+	}
+	.controls {
+		 margin-top: 10px;
+		 border: 1px solid transparent;
+		 border-radius: 2px 0 0 2px;
+		 box-sizing: border-box;
+		 -moz-box-sizing: border-box;
+		 height: 32px;
+		 outline: none;
+		 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	 }
+	#pac-input {
+		background-color: #fff;
+		font-family: Roboto;
+		font-size: 15px;
+		font-weight: 300;
+		margin-left: 12px;
+		padding: 0 11px 0 13px;
+		text-overflow: ellipsis;
+		width: 300px;
+	}
+	#type-selector label {
+		font-family: Roboto;
+		font-size: 13px;
+		font-weight: 300;
+	}
+	#pac-input:focus {
+		border-color: #4d90fe;
+	}
+	
+	/* Full-width input fields */
+	.popupInput{/* }input[type=text], input[type=password], input[type=email] { */
+	    width: 100%;
+	    padding: 12px 20px;
+	    margin: 8px 0;
+	    display: inline-block;
+	    border: 1px solid #ccc;
+	    box-sizing: border-box;
+	}
+	
+	/* Set a style for all buttons */
+	#buttons {
+	    /*  */
+	    color: white;
+	    margin: 8px 0;
+	    border: none;
+	    cursor: pointer;
+	}
+	
+	/* Extra styles for the cancel button */
+	.cancelbtn {
+	    background-color: #f44336;
+	}
+	
+	.signupbtn {
+	    background-color: #4CAF50;
+	}
+	
+	.signinbtn, .yesbtn {
+	    background-color: #4CAF50;
+	}
+	.forgotbtn {
+	    background-color: #7bc2e5;
+	}
+	.nobtn {
+	    background-color: #e8a02e;
+	}
+	
+	/* Float cancel, signin,no, yes and signup buttons and add an equal width */
+	.cancelbtn,.signupbtn, .signinbtn, .forgotbtn, .nobtn, .yesbtn {
+		padding: 14px 20px;
+		margin: 0 10px 0 10px;
+		width: 49%;
+	}
+	
+	/* Add padding to container elements */
+	.container1 {
+	    padding: 16px;
+	}
+	
+	/* The Modal (background) */
+	.modal {
+	    display: none; /* Hidden by default */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Sit on top */
+	    left: 0;
+	    top: 50px;
+	    width: 100%; /* Full width */
+	    height: 100%; /* Full height */
+	    overflow: auto; /* Enable scroll if needed */
+	    background-color: rgb(0,0,0); /* Fallback color */
+	    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	    padding-top: 0px;
+	}
+	
+	/* Modal Content/Box */
+	.modal-content {
+	    background-color: #fefefe;
+	    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 40%; /* Could be more or less, depending on screen size */
+	}
+	
+	/* Modal Content/Box */
+	.modal-content-tag {
+	    background-color: #fefefe;
+	    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	    border: 1px solid #888;
+	    width: 20%; /* Could be more or less, depending on screen size */
+	}
+
+	/* The Close Button (x) */
+	.close {
+	    position: absolute;
+	    right: 35px;
+	    top: 15px;
+	    color: #000;
+	    font-size: 40px;
+	    font-weight: bold;
+	}
+	
+	.close:hover,
+	.close:focus {
+	    color: red;
+	    cursor: pointer;
+	}
+	
+	/* Clear floats */
+	.clearfix::after {
+	    content: "";
+	    clear: both;
+	    display: table;
+	}
+	
+	/* Change styles for cancel button and signup button on extra small screens */
+	@media screen and (max-width: 300px) {
+	    .cancelbtn, .signupbtn, 
+	    .nobtn, .yesbtn, 
+	    .signinbtn, .forgotbtn {
+	       width: 100%;
+	    }
+	}
+	
+	/* Popup container - can be anything you want */
+	.popup {
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-animation: fadeIn 1s;
+	    animation: fadeIn 1s;
+	}
+	
+	/* Add animation (fade in the popup) */
+	@-webkit-keyframes fadeIn {
+	    from {opacity: 0;} 
+	    to {opacity: 1;}
+	}
+	
+	@keyframes fadeIn {
+	    from {opacity: 0;}
+	    to {opacity:1 ;}
+	}
+	
+	#stars { color: #ee8b2d;}
+	
+	
+	/*
+    DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+	body {
+	    font-family: 'Poppins', sans-serif;
+	    background: #fafafa;
+	}
+	
+	p {
+	    font-family: 'Poppins', sans-serif;
+	    font-size: 1.1em;
+	    font-weight: 300;
+	    line-height: 1.7em;
+	    color: #999;
+	}
+	
+	a, a:hover, a:focus {
+	    color: inherit;
+	    text-decoration: none;
+	    transition: all 0.3s;
+	}
+	
+	.navbar-btn {
+	    box-shadow: none;
+	    outline: none !important;
+	    border: none;
+	}
+	
+	.line {
+	    width: 100%;
+	    height: 1px;
+	    border-bottom: 1px dashed #ddd;
+	    margin: 40px 0;
+	}
+	
+	i, span {
+	    display: inline-block;
+	}
+	
+	/* ---------------------------------------------------
+	    SIDEBAR STYLE
+	----------------------------------------------------- */
+	.wrapper {
+	    display: flex;
+	    align-items: stretch;
+	}
+	
+	#sidebar {
+	    min-width: 250px;
+	    max-width: 250px;
+	    background: #2f2f2f;
+	    color: #fff;
+	    transition: all 0.3s;
+	}
+	
+	#sidebar.active {
+	    min-width: 80px;
+	    max-width: 80px;
+	    text-align: center;
+	}
+	
+	#sidebar.active .sidebar-header h3, #sidebar.active .CTAs {
+	    display: none;
+	}
+	
+	#sidebar.active .sidebar-header strong {
+	    display: block;
+	}
+	
+	#sidebar ul li a {
+	    text-align: left;
+	}
+	
+	#sidebar.active ul li a {
+	    padding: 20px 10px;
+	    text-align: center;
+	    font-size: 0.85em;
+	}
+	
+	#sidebar.active ul li a i {
+	    margin-right:  0;
+	    display: block;
+	    font-size: 1.8em;
+	    margin-bottom: 5px;
+	}
+	
+	#sidebar.active ul ul a {
+	    padding: 10px !important;
+	}
+	
+	#sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
+	    top: auto;
+	    bottom: 5px;
+	    right: 50%;
+	    -webkit-transform: translateX(50%);
+	    -ms-transform: translateX(50%);
+	    transform: translateX(50%);
+	}
+	
+	#sidebar .sidebar-header {
+	    padding: 20px;
+	    background: #5f5f5f;
+	}
+	
+	#sidebar .sidebar-header strong {
+	    display: none;
+	    font-size: 1.8em;
+	}
+	
+	#sidebar ul.components {
+	    padding: 20px 0;
+	    border-bottom: 1px solid #47748b;
+	}
+	
+	#sidebar ul li a {
+	    padding: 10px;
+	    font-size: 1.1em;
+	    display: block;
+	}
+	#sidebar ul li a:hover {
+	    color: #2f2f2f;
+	    background: #fff;
+	}
+	#sidebar ul li a i {
+	    margin-right: 10px;
+	}
+	
+	#sidebar ul li.active > a, a[aria-expanded="true"] {
+	    color: #fff;
+	    background: #4f4f4f;
+	}
+	
+	
+	a[data-toggle="collapse"] {
+	    position: relative;
+	}
+	
+	a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+	    content: '\e259';
+	    display: block;
+	    position: absolute;
+	    right: 20px;
+	    font-family: 'Glyphicons Halflings';
+	    font-size: 0.6em;
+	}
+	a[aria-expanded="true"]::before {
+	    content: '\e260';
+	}
+	
+	
+	ul ul a {
+	    font-size: 0.9em !important;
+	    padding-left: 30px !important;
+	    background: #5f5f5f;
+	}
+	
+	ul.CTAs {
+	    padding: 20px;
+	}
+	
+	ul.CTAs a {
+	    text-align: center;
+	    font-size: 0.9em !important;
+	    display: block;
+	    border-radius: 5px;
+	    margin-bottom: 5px;
+	}
+	
+	a.download, a.article {
+	    background: #5f5f5f;
+	    color: #fff;
+	}
+	
+	a.article, a.article:hover {
+	    background: #5f5f5f !important;
+	    color: #fff !important;
+	}
+	
+	
+	
+	/* ---------------------------------------------------
+	    CONTENT STYLE
+	----------------------------------------------------- */
+	#content {
+	    padding: 0px;
+	    min-height: 100vh;
+	    transition: all 0.3s;
+	}
+	
+	
+	/* ---------------------------------------------------
+	    MEDIAQUERIES
+	----------------------------------------------------- */
+	@media (max-width: 768px) {
+	    #sidebar {
+	        min-width: 80px;
+	        max-width: 80px;
+	        text-align: center;
+	        margin-left: -80px !important ;
+	    }
+	    a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+	        top: auto;
+	        bottom: 5px;
+	        right: 50%;
+	        -webkit-transform: translateX(50%);
+	        -ms-transform: translateX(50%);
+	        transform: translateX(50%);
+	    }
+	    #sidebar.active {
+	        margin-left: 0 !important;
+	    }
+	
+	    #sidebar .sidebar-header h3, #sidebar .CTAs {
+	        display: none;
+	    }
+	
+	    #sidebar .sidebar-header strong {
+	        display: block;
+	    }
+	
+	    #sidebar ul li a {
+	        padding: 20px 10px;
+	    }
+	
+	    #sidebar ul li a span {
+	        font-size: 0.85em;
+	    }
+	    #sidebar ul li a i {
+	        margin-right:  0;
+	        display: block;
+	    }
+	
+	    #sidebar ul ul a {
+	        padding: 10px !important;
+	    }
+	
+	    #sidebar ul li a i {
+	        font-size: 1.3em;
+	    }
+	    #sidebar {
+	        margin-left: 0;
+	    }
+	    #sidebarCollapse span {
+	        display: none;
+	    }
+	}
+	
+	.margin-top-20 {
+		margin-top: 20px;
+	}
+	
+	.margin-bottom-20 {
+		margin-top: 20px;
+	}
+	
+	.no-margin {
+		margin: 0px;
+	}
+	
+	/* box component */
+	
+	.box {
+		border-color: #e6e6e6;
+		background: #FFF;
+		border-radius: 6px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+		padding: 10px;
+		margin-bottom: 40px;
+	}
+	
+	.box-center {
+		margin: 20px auto;
+	}
+	
+	/* input [type = file]
+	----------------------------------------------- */
+	
+	/* input[type=file] {
+		display: block !important;
+		right: 1px;
+		top: 1px;
+		height: 34px;
+		opacity: 0;
+	  width: 100%;
+		background: none;
+		position: absolute;
+	  overflow: hidden;
+	  z-index: 2;
+	}
+	
+	.control-fileupload {
+		display: block;
+		border: 1px solid #d6d7d6;
+		background: #FFF;
+		border-radius: 4px;
+		width: 100%;
+		height: 36px;
+		line-height: 36px;
+		padding: 0px 10px 2px 10px;
+	  overflow: hidden;
+	  position: relative;
+		
+	  &:before, input, label {
+	    cursor: pointer !important;
+	  }
+	  File upload button
+	  &:before {
+	    inherit from boostrap btn styles
+	    padding: 4px 12px;
+	    margin-bottom: 0;
+	    font-size: 14px;
+	    line-height: 20px;
+	    color: #333333;
+	    text-align: center;
+	    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	    vertical-align: middle;
+	    cursor: pointer;
+	    background-color: #f5f5f5;
+	    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+	    background-repeat: repeat-x;
+	    border: 1px solid #cccccc;
+	    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	    border-bottom-color: #b3b3b3;
+	    border-radius: 4px;
+	    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	    transition: color 0.2s ease;
+	
+	    add more custom styles
+	    content: 'Browse';
+	    display: block;
+	    position: absolute;
+	    z-index: 1;
+	    top: 2px;
+	    right: 2px;
+	    line-height: 20px;
+	    text-align: center;
+	  }
+	  &:hover, &:focus {
+	    &:before {
+	      color: #333333;
+	      background-color: #e6e6e6;
+	      color: #333333;
+	      text-decoration: none;
+	      background-position: 0 -15px;
+	      transition: background-position 0.2s ease-out;
+	    }
+	  }
+	  
+	  label {
+	    line-height: 24px;
+	    color: #999999;
+	    font-size: 14px;
+	    font-weight: normal;
+	    overflow: hidden;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+	    position: relative;
+	    z-index: 1;
+	    margin-right: 90px;
+	    margin-bottom: 0px;
+	    cursor: text;
+	  }
+	} */
+	
+	/*----- footer config -----*/
+	footer:after{
+		display:table;
+		content:"";
+		clear:both;
+	}
+	
+	footer{
+		overflow:hidden;
+		}
+	
+	footer>nav,footer>p{
+		display:inline-block;
+		float:left;
+	}
+	
+	footer nav.footer-nav{
+		width:33.3333%;
+	}
+	
+	footer nav.footer-nav ul li{
+		padding:0 15px;
+		font-size:12px;
+		border-right:1px solid #ddd;
+	}
+	
+	footer nav.footer-nav ul li a{
+		color:#444;
+	}
+	footer nav.footer-nav ul li:first-child{
+		padding-left:0;
+	}
+	
+	footer nav.footer-nav ul li:last-child{
+		border-right:0;
+	}
+	
+	footer p{
+		margin:0;
+		width:33.333%;
+		font-size:12px;
+		text-align:center;
+		line-height:1;
+	}
+	
+	footer nav.social-nav{
+		width:33.3333%;
+	}
+	
+	footer nav.social-nav ul{
+		float:right;
+	}
+	
+	footer nav.social-nav ul li{
+		font-size:14px;
+		padding-left:4px;
+	}
+	
+	footer nav.social-nav ul li i{
+		height:22px;
+		width:22px;
+		line-height:22px;
+		border-radius:3px;
+		text-align:center;
+		color:#fff;
+		background-color:#444;
+	}
